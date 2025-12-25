@@ -6,9 +6,16 @@ spring:
     name: "configserver"
 
   profiles:
-    active: native
+    #active: native -> only when you keep config files in the config server or local file system
+    active: git
   cloud:
     config:
       server:
-        native:
-          search-locations: "classpath:/config"
+        #native:
+          #search-locations: "classpath:/config"
+        git:
+          uri: "https://github.com/abhishekdeepak02/lazybank-config.git"
+          default-label: master # default branch to be used
+          timeout: 5000 # it will wait for 5 seconds to connect to git repo
+          clone-on-start: true # it will clone the repo on server startup
+          force-pull: true # it will force pull the latest changes on every re-start
