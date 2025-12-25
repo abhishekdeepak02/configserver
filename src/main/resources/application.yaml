@@ -19,3 +19,6 @@ spring:
           timeout: 5000 # it will wait for 5 seconds to connect to git repo
           clone-on-start: true # it will clone the repo on server startup
           force-pull: true # it will force pull the latest changes on every re-start
+
+encrypt: #configure encryption key for sensitive data
+  key: "9f3c8e4b2a1d6f709c4a8e2d7b5f6a1c3e9d0b7a4c8f2e1d6a9b5c7e3f0d"
