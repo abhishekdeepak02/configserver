@@ -12,6 +12,7 @@
 	<artifactId>configserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>configserver</name>
+    <packaging>jar</packaging>
 	<description>spring cloud config server</description>
 	<url/>
 	<licenses>
@@ -64,6 +65,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <to>
+                        <image>myimage</image>
+                    </to>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
