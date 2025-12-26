@@ -22,3 +22,20 @@ spring:
 
 encrypt: #configure encryption key for sensitive data
   key: "9f3c8e4b2a1d6f709c4a8e2d7b5f6a1c3e9d0b7a4c8f2e1d6a9b5c7e3f0d"
+
+# Add management endpoint exposure Enable/Refresh API
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  # readiness and liveness probe configurations
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+    endpoint:
+      health:
+        probes:
+          enabled: true
